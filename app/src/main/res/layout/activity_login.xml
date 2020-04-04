@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:background="@drawable/login">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40pt"
+        android:fontFamily="@font/poppins_bold"
+        android:text="M-Learning"
+        android:textColor="@android:color/background_light"
+        android:textSize="40sp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/uname"
+        android:layout_width="130pt"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20pt"
+        android:background="@drawable/logintextedit"
+        android:ems="10"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="username"
+        android:inputType="textPersonName"
+        android:paddingLeft="10pt"
+        android:textColor="@android:color/background_light"
+        android:textColorHint="#D7F2DF"
+        android:textCursorDrawable="@android:color/background_light"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/pass"
+        android:layout_width="130pt"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/uname"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10pt"
+        android:background="@drawable/logintextedit"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="password"
+        android:inputType="textPassword"
+        android:paddingLeft="10pt"
+        android:textColor="@android:color/background_light"
+        android:textColorHint="#D7F2DF"
+        android:textCursorDrawable="@android:color/background_light"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="130pt"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pass"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10pt"
+        android:background="@android:color/background_light"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Sign In"
+        android:letterSpacing="0.1"
+        android:textColor="@color/hijau"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10pt"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Forgot password ?"
+        android:textColor="@android:color/background_light"
+        android:textSize="14sp" />
+
+    <ImageView
+        android:id="@+id/sponsor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/sponsor"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20pt"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/sponsorLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sponsored by"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="@color/text"
+        android:layout_above="@id/sponsor"
+        android:layout_marginBottom="5pt"
+        android:layout_centerHorizontal="true"/>
+
+
+</RelativeLayout>

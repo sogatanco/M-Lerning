@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminHome">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_light"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:elevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_marginTop="5pt"
+                android:layout_marginBottom="5pt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/adminlogo" />
+
+            <TextView
+                android:id="@+id/hei"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5pt"
+                android:layout_marginTop="10pt"
+                android:layout_toRightOf="@id/imageView"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Hei, "
+                android:textColor="@color/text"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/nama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10pt"
+                android:layout_toRightOf="@id/hei"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Admin"
+                android:textColor="@color/hijau"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/welcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3pt"
+                android:layout_alignBottom="@id/imageView"
+                android:layout_toRightOf="@id/imageView"
+                android:layout_marginLeft="5pt"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Welcome Back!"
+                android:textColor="@color/hitam"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar">
+
+        <ImageView
+            android:id="@+id/prodi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/prodi"
+            android:layout_marginTop="15pt"
+            android:layout_marginLeft="15pt"/>
+
+        <ImageView
+            android:id="@+id/dosen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/prodi"
+            android:src="@drawable/dosen"
+            android:layout_marginTop="15pt"
+            android:layout_marginLeft="15pt"/>
+
+        <ImageView
+            android:id="@+id/logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dosen"
+            android:src="@drawable/logout"
+            android:layout_marginTop="15pt"
+            android:layout_marginLeft="15pt"/>
+
+        <ImageView
+            android:id="@+id/kelas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/kelas"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15pt" />
+
+        <ImageView
+            android:id="@+id/pair"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pair"
+            android:layout_below="@id/kelas"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15pt" />
+
+
+        <ImageView
+            android:id="@+id/mahasiswa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/mahasiswa"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15pt"
+            android:layout_marginRight="15pt"/>
+
+        <ImageView
+            android:id="@+id/mk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/mk"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15pt"
+            android:layout_below="@id/mahasiswa"
+            android:layout_marginRight="15pt"/>
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

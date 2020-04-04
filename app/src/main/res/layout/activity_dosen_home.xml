@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DosenHome">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_light"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:elevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_marginTop="5pt"
+                android:layout_marginBottom="5pt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dosenlogo" />
+
+            <TextView
+                android:id="@+id/hei"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5pt"
+                android:layout_marginTop="10pt"
+                android:layout_toRightOf="@id/imageView"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Hei, "
+                android:textColor="@color/text"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/nama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10pt"
+                android:layout_toRightOf="@id/hei"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Arhami Str.Kom"
+                android:textColor="@color/hijau"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/welcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/imageView"
+                android:layout_toRightOf="@id/imageView"
+                android:layout_marginLeft="5pt"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Happy Teaching!"
+                android:textColor="@color/hitam"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar">
+
+        <ImageView
+            android:id="@+id/mahasiswa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/mahasiswa"
+            android:layout_marginTop="15pt"
+            android:layout_marginLeft="15pt"/>
+
+        <ImageView
+            android:id="@+id/test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mahasiswa"
+            android:src="@drawable/ujian"
+            android:layout_marginTop="15pt"
+            android:layout_marginLeft="15pt"/>
+
+        <ImageView
+            android:id="@+id/materi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/materi"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15pt" />
+
+        <ImageView
+            android:id="@+id/informasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/informasi"
+            android:layout_below="@id/materi"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15pt" />
+
+
+        <ImageView
+            android:id="@+id/tugas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tugas"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15pt"
+            android:layout_marginRight="15pt"/>
+
+        <ImageView
+            android:id="@+id/logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logout"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15pt"
+            android:layout_below="@id/tugas"
+            android:layout_marginRight="15pt"/>
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>
