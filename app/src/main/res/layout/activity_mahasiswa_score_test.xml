@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MahasiswaScoreTest">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_light"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:elevation="10dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/backbutton">
+        </androidx.appcompat.widget.AppCompatImageView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Score"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/text"
+            android:textSize="20sp">
+        </androidx.appcompat.widget.AppCompatTextView>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/piala"
+            android:elevation="10dp"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3pt"
+            android:id="@+id/totalscore">
+            <TextView
+                android:id="@+id/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:text="SCORE : "
+                android:textSize="18sp"
+                android:textColor="@color/text" />
+
+            <TextView
+                android:id="@+id/score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/label"
+                android:text="90"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="18sp"
+                android:textColor="@color/hijau"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/soal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:layout_below="@id/totalscore"
+            android:text="Total jumlah 30 soal"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/terjawab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:layout_below="@id/soal"
+            android:text="Terjawab 20 soal"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/benar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:layout_below="@id/terjawab"
+            android:text="Benar 19 soal"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/salah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:layout_below="@id/benar"
+            android:text="Salah 1 soal"
+            android:layout_centerHorizontal="true"/>
+
+        <Button
+            android:layout_width="60pt"
+            android:layout_height="15pt"
+            android:text="ok"
+            android:textColor="@color/putih"
+            android:fontFamily="@font/poppins_bold"
+            android:background="@drawable/btn_rounded"
+            android:layout_below="@id/salah"
+            android:layout_marginTop="15pt"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

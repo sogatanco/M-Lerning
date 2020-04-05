@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_light"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:elevation="10dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/backbutton">
+        </androidx.appcompat.widget.AppCompatImageView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/text"
+            android:textSize="20sp">
+        </androidx.appcompat.widget.AppCompatTextView>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:background="@color/cardview_light_background">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycle"
+            android:background="@color/cardview_light_background"
+            android:layout_width="match_parent"
+            android:padding="14pt"
+            android:scrollbars="vertical"
+            android:elevation="0dp"
+            android:layout_above="@id/addfield"
+            android:layout_height="match_parent" />
+
+        <EditText
+            android:id="@+id/addfield"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/divider"
+            android:layout_marginLeft="15pt"
+            android:layout_marginBottom="2pt"
+            android:textColor="@color/text"
+            android:background="@null"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="Item Baru"
+            android:textColorHint="@color/hint"
+            android:layout_toLeftOf="@+id/add"
+            android:textSize="14sp"
+            android:singleLine="true"/>
+
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="20pt"
+            android:text="tambah"
+            android:layout_marginLeft="3pt"
+            android:layout_marginBottom="20pt"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15pt"
+            android:fontFamily="@font/poppins_bold"
+            android:background="@color/hijau"
+            android:textColor="@color/putih"/>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_toLeftOf="@id/add"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20pt"
+            android:layout_marginLeft="15pt"
+            android:background="?android:attr/listDivider" />
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

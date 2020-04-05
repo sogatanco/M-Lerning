@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AdminProdi"
+        <activity android:name=".MahasiswaScoreTest"
             android:theme="@style/AppTheme.Utama">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,12 +18,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AdminHome"
+            android:name=".DosenAddProdi"
             android:theme="@style/AppTheme.Utama">
         </activity>
         <activity
-            android:name=".DosenHome"
+            android:name=".AaListProdi"
             android:theme="@style/AppTheme.Utama"></activity>
+        <activity
+            android:name=".AdminHome"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".DosenHome"
+            android:theme="@style/AppTheme.Utama" />
         <activity
             android:name=".MahasiswaHome"
             android:theme="@style/AppTheme.Utama" />
