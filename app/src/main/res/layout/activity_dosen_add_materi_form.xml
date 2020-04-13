@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".DosenAddMateriForm">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -13,7 +14,7 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         android:elevation="10dp">
-        
+
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/back"
             android:layout_width="wrap_content"
@@ -25,7 +26,7 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Prodi"
+            android:text="New Materi"
             android:fontFamily="@font/poppins_bold"
             android:textColor="@color/text"
             android:textSize="20sp">
@@ -35,21 +36,42 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_below="@id/toolbar">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycle"
-            android:background="@color/cardview_light_background"
+        <EditText
             android:layout_width="match_parent"
-            android:padding="14pt"
-            android:scrollbars="vertical"
-            android:elevation="0dp"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content"
+            android:id="@+id/nama"
+            android:layout_marginRight="15pt"
+            android:layout_marginLeft="15pt"
+            android:layout_marginTop="15pt"
+            android:hint="Title of materi"
+            android:fontFamily="@font/poppins_regular"
+            android:singleLine="true"
+            android:textSize="14sp"/>
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/desc"
+            android:layout_below="@id/nama"
+            android:layout_marginRight="15pt"
+            android:layout_marginLeft="15pt"
+            android:layout_marginTop="15pt"
+            android:hint="Description"
+            android:fontFamily="@font/poppins_regular"
+            android:singleLine="true"
+            android:textSize="14sp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/desc"
+            android:text="save"
+            android:onClick="select"
+            />
 
     </RelativeLayout>
-
-
 
 </RelativeLayout>

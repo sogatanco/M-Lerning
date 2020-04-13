@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MahasiswaInfo">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_light"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:elevation="10dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/backbutton">
+        </androidx.appcompat.widget.AppCompatImageView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Iformation"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/text"
+            android:textSize="20sp">
+        </androidx.appcompat.widget.AppCompatTextView>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/info"
+            android:elevation="10dp"/>
+
+
+        <TextView
+            android:id="@+id/important"
+            android:layout_marginTop="5pt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="14sp"
+            android:layout_below="@id/logo"
+            android:text="Important!"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/important"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="12sp"
+            android:text="Untuk mengantisipasi virus corona kuliah tatap muka dihentikan sementara waktu mulai dengan pengumuman ini dikeluarkan sampai dengan keluar pengumuman selanjutnya "
+            android:textAlignment="center"
+            android:layout_marginLeft="20pt"
+            android:layout_marginRight="20pt"/>
+
+        <TextView
+            android:id="@+id/dosen"
+            android:layout_marginTop="5pt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="14sp"
+            android:layout_below="@id/info"
+            android:text="~ Mulyadi ST.M.Eng"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20pt"/>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

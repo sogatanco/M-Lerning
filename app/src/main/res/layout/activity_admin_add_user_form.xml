@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminAddDosenForm"
+    android:focusableInTouchMode="true">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_light"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:elevation="10dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/backbutton">
+        </androidx.appcompat.widget.AppCompatImageView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/text"
+            android:textSize="20sp">
+        </androidx.appcompat.widget.AppCompatTextView>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:background="@android:color/background_light">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/nama"
+                android:layout_marginRight="15pt"
+                android:layout_marginLeft="15pt"
+                android:layout_marginTop="15pt"
+                android:hint="Nama lengkap"
+                android:fontFamily="@font/poppins_regular"
+                android:singleLine="true"
+                android:textSize="14sp"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/jk"
+                android:layout_marginRight="15pt"
+                android:layout_marginLeft="15pt"
+                android:layout_marginTop="15pt"
+                android:layout_below="@id/nama"
+                android:fontFamily="@font/poppins_regular" />
+
+            <View
+                android:id="@+id/jkdivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginRight="15pt"
+                android:layout_marginLeft="15pt"
+                android:layout_marginTop="2pt"
+                android:layout_below="@id/jk"
+                android:background="@color/text" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tempat"
+                android:layout_marginRight="15pt"
+                android:layout_marginLeft="15pt"
+                android:layout_marginTop="15pt"
+                android:hint="Tempat"
+                android:layout_below="@id/jkdivider"
+                android:fontFamily="@font/poppins_regular"
+                android:singleLine="true"
+                android:textSize="14sp"/>
+
+            <EditText
+                android:id="@+id/tgllahir"
+                android:layout_below="@id/tempat"
+                android:layout_marginTop="15pt"
+                android:layout_marginRight="15pt"
+                android:layout_marginLeft="15pt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="14sp"
+                android:hint="Tgl lahir (dd-mm-yyyy)"
+                android:inputType="date" />
+
+            <EditText
+                android:id="@+id/alamat"
+                android:layout_below="@id/tgllahir"
+                android:layout_marginTop="15pt"
+                android:layout_marginRight="15pt"
+                android:layout_marginLeft="15pt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="14sp"
+                android:ems="10"
+                android:hint="Alamat"
+                />
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_below="@id/alamat"
+                android:layout_marginTop="15pt"
+                android:layout_marginRight="15pt"
+                android:layout_marginLeft="15pt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="14sp"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_below="@id/email"
+                android:layout_marginTop="15pt"
+                android:layout_marginRight="15pt"
+                android:layout_marginLeft="15pt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="14sp"
+                android:ems="10"
+                android:hint="Password"
+                />
+
+            <TextView
+                android:id="@+id/save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="15pt"
+                android:text="SAVE DATA"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/hijau"
+                android:layout_marginRight="15pt"
+                android:layout_below="@id/password"/>
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+</RelativeLayout>

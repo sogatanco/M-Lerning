@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".DosenAddInfo">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -13,9 +14,8 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         android:elevation="10dp">
-        
+
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/backbutton">
@@ -25,7 +25,7 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Prodi"
+            android:text="New Info"
             android:fontFamily="@font/poppins_bold"
             android:textColor="@color/text"
             android:textSize="20sp">
@@ -38,16 +38,34 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/toolbar">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycle"
-            android:background="@color/cardview_light_background"
+        <EditText
+            android:id="@+id/field"
             android:layout_width="match_parent"
-            android:padding="14pt"
-            android:scrollbars="vertical"
-            android:elevation="0dp"
-            android:layout_height="match_parent" />
+            android:padding="5pt"
+            android:layout_marginRight="20pt"
+            android:layout_marginTop="20pt"
+            android:layout_marginLeft="20pt"
+            android:layout_marginBottom="5pt"
+            android:layout_height="70pt"
+            android:ems="10"
+            android:textColor="@color/text"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:hint="add new info"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:background="@drawable/text_area_rounded" />
 
-
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="20pt"
+            android:layout_marginRight="20pt"
+            android:text="update"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/putih"
+            android:background="@color/hijau"
+            android:layout_below="@id/field"/>
     </RelativeLayout>
 
 

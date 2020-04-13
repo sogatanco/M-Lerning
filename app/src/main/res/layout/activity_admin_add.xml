@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".AdminAddDosen">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -44,24 +47,10 @@
             android:padding="14pt"
             android:scrollbars="vertical"
             android:elevation="0dp"
-            android:layout_above="@id/newfield"
+            android:layout_above="@id/add"
             android:layout_height="match_parent" />
 
-        <EditText
-            android:id="@+id/newfield"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/divider"
-            android:layout_marginLeft="15pt"
-            android:layout_marginBottom="2pt"
-            android:textColor="@color/text"
-            android:background="@null"
-            android:fontFamily="@font/poppins_regular"
-            android:hint="Item Baru"
-            android:textColorHint="@color/hint"
-            android:layout_toLeftOf="@+id/add"
-            android:textSize="14sp"
-            android:singleLine="true"/>
+
 
 
         <Button
@@ -78,17 +67,6 @@
             android:background="@color/hijau"
             android:textColor="@color/putih"/>
 
-        <View
-            android:id="@+id/divider"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_toLeftOf="@id/add"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="20pt"
-            android:layout_marginLeft="15pt"
-            android:background="?android:attr/listDivider" />
     </RelativeLayout>
-
-
 
 </RelativeLayout>

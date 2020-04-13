@@ -9,21 +9,62 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MahasiswaScoreTest"
-            android:theme="@style/AppTheme.Utama">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".DosenAddMateriForm"
+            android:theme="@style/AppTheme.Utama"></activity>
         <activity
-            android:name=".DosenAddProdi"
-            android:theme="@style/AppTheme.Utama">
-        </activity>
+            android:name=".DosenAddMateri"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".AaListMk"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".DosenListMahasiswa"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".AdminUpdateMahasiswa"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".AdminAddMahasiswaForm"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".AdminAddMahasiswa"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".AdminAddMk"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".AaListKelas"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".AdminUpdateDosen"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".AdminAddDosenForm"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".AdminAddDosen"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".AdminAddClass"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".DosenDetailMahasiswa"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".DosenAddInfo"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".MahasiswaInfo"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".MahasiswaScoreTest"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".AdminAddProdi"
+            android:theme="@style/AppTheme.Utama" />
         <activity
             android:name=".AaListProdi"
-            android:theme="@style/AppTheme.Utama"></activity>
+            android:theme="@style/AppTheme.Utama" />
         <activity
             android:name=".AdminHome"
             android:theme="@style/AppTheme.Utama" />
@@ -36,7 +77,15 @@
         <activity
             android:name=".LoginActivity"
             android:theme="@style/AppTheme.NoStatusAndAction" />
-        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoStatusAndAction">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

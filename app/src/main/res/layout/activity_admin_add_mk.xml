@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".AdminAddMk">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -47,22 +50,42 @@
             android:layout_above="@id/newfield"
             android:layout_height="match_parent" />
 
+
+
         <EditText
             android:id="@+id/newfield"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@id/divider"
+            android:layout_marginRight="15pt"
             android:layout_marginLeft="15pt"
-            android:layout_marginBottom="2pt"
-            android:textColor="@color/text"
-            android:background="@null"
+            android:layout_above="@id/add"
+            android:layout_marginBottom="3pt"
+            android:hint="Mata kuliah baru"
+            android:singleLine="true"
             android:fontFamily="@font/poppins_regular"
-            android:hint="Item Baru"
-            android:textColorHint="@color/hint"
-            android:layout_toLeftOf="@+id/add"
             android:textSize="14sp"
-            android:singleLine="true"/>
+            android:textColor="@color/text"/>
 
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dosen"
+            android:layout_toLeftOf="@id/add"
+            android:layout_marginLeft="15pt"
+            android:layout_above="@id/dosendivider"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp" />
+
+        <View
+            android:id="@+id/dosendivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="15pt"
+            android:layout_marginRight="2pt"
+            android:layout_toLeftOf="@id/add"
+            android:layout_marginBottom="20pt"
+            android:background="@color/text" />
 
         <Button
             android:id="@+id/add"
@@ -78,17 +101,6 @@
             android:background="@color/hijau"
             android:textColor="@color/putih"/>
 
-        <View
-            android:id="@+id/divider"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_toLeftOf="@id/add"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="20pt"
-            android:layout_marginLeft="15pt"
-            android:background="?android:attr/listDivider" />
     </RelativeLayout>
-
-
 
 </RelativeLayout>

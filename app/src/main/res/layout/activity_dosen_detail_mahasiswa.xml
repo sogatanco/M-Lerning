@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DosenDetailMahasiswa">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_light"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:elevation="10dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/back"
+            android:layout_height="wrap_content"
+            android:src="@drawable/backbutton">
+        </androidx.appcompat.widget.AppCompatImageView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Detail"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/text"
+            android:textSize="20sp">
+        </androidx.appcompat.widget.AppCompatTextView>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/iconmahasiswa"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40pt"/>
+
+        <TextView
+            android:id="@+id/nama"
+            android:layout_marginTop="8pt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text"
+            android:text="Wahyudin"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/icon"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ttl"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:textColor="@color/text"
+            android:layout_below="@id/nama"
+            android:layout_marginBottom="15pt"
+            android:text="Paya Reuhat, 16 Jan 1998"/>
+
+        <TextView
+            android:layout_marginLeft="20pt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/jk"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:textColor="@color/text"
+            android:layout_below="@id/ttl"
+            android:text="Jenis Kelamin"/>
+
+        <TextView
+            android:layout_marginLeft="20pt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/tjk"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:textColor="@color/text"
+            android:layout_below="@id/ttl"
+            android:text=":"/>
+
+
+        <TextView
+            android:layout_marginLeft="20pt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/almt"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:textColor="@color/text"
+            android:layout_below="@id/jk"
+            android:text="Alamat"/>
+
+        <TextView
+            android:layout_marginLeft="20pt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/talmt"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:textColor="@color/text"
+            android:layout_below="@id/tjk"
+            android:text=":"/>
+
+        <TextView
+            android:layout_marginLeft="20pt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/email"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:textColor="@color/text"
+            android:layout_below="@id/almt"
+            android:text="Email"/>
+
+        <TextView
+            android:layout_marginLeft="20pt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/temail"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:textColor="@color/text"
+            android:layout_below="@id/talmt"
+            android:text=":"/>
+
+        <TextView
+            android:layout_marginLeft="5pt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/isijk"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:textColor="@color/text"
+            android:layout_below="@id/ttl"
+            android:layout_toRightOf="@id/tjk"
+            android:text="laki - laki"/>
+
+        <TextView
+            android:layout_marginLeft="5pt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/isialmt"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:textColor="@color/text"
+            android:layout_below="@id/isijk"
+            android:layout_toRightOf="@id/talmt"
+            android:text="Matang GLP 2"/>
+
+
+        <TextView
+            android:layout_marginLeft="5pt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/isiemail"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:textColor="@color/text"
+            android:layout_below="@id/isialmt"
+            android:layout_toRightOf="@id/temail"
+            android:text="wahyu@sogata.co"/>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
