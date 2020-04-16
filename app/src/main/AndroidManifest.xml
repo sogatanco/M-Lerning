@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DosenAddMateriForm"
+        <activity android:name=".DosenUpdateMateriForm"
             android:theme="@style/AppTheme.Utama"></activity>
+        <activity
+            android:name=".DosenAddMateriForm"
+            android:theme="@style/AppTheme.Utama" />
         <activity
             android:name=".DosenAddMateri"
             android:theme="@style/AppTheme.Utama" />

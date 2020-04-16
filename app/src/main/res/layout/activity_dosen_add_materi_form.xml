@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DosenAddMateriForm">
+    android:focusableInTouchMode="true">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -15,29 +13,47 @@
         android:theme="?attr/actionBarTheme"
         android:elevation="10dp">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/backbutton">
-        </androidx.appcompat.widget.AppCompatImageView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/backbutton"/>
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Materi"
-            android:fontFamily="@font/poppins_bold"
-            android:textColor="@color/text"
-            android:textSize="20sp">
-        </androidx.appcompat.widget.AppCompatTextView>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Materi"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/text"
+                android:textSize="20sp"
+                android:layout_toRightOf="@id/back"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="save"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/hijau"
+                android:layout_marginRight="15pt"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_regular"/>
+        </RelativeLayout>
+
 
     </androidx.appcompat.widget.Toolbar>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolbar">
+        android:layout_below="@id/toolbar"
+        android:background="@color/putih">
 
         <EditText
             android:layout_width="match_parent"
@@ -45,32 +61,65 @@
             android:id="@+id/nama"
             android:layout_marginRight="15pt"
             android:layout_marginLeft="15pt"
-            android:layout_marginTop="15pt"
+            android:layout_marginTop="10pt"
             android:hint="Title of materi"
             android:fontFamily="@font/poppins_regular"
             android:singleLine="true"
             android:textSize="14sp"/>
 
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/desc"
+            android:id="@+id/filename"
             android:layout_below="@id/nama"
-            android:layout_marginRight="15pt"
+            android:layout_toLeftOf="@id/uploadicon"
             android:layout_marginLeft="15pt"
-            android:layout_marginTop="15pt"
-            android:hint="Description"
+            android:layout_marginTop="10pt"
+            android:hint="File Name"
+            android:layout_marginRight="5pt"
             android:fontFamily="@font/poppins_regular"
             android:singleLine="true"
             android:textSize="14sp"/>
 
-        <Button
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/uploadicon"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/desc"
-            android:text="save"
-            android:onClick="select"
+            android:layout_marginRight="15pt"
+            android:src="@drawable/uploadicon"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/nama"
+            android:layout_marginTop="15pt"
+            android:onClick="select"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="7pt"
+            android:layout_marginRight="15pt"
+            android:layout_marginLeft="15pt"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/filename"
+            android:visibility="gone"
             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/progressBar"
+            android:id="@+id/persen"
+            android:text=""
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="10sp"
+            android:layout_marginLeft="15pt"/>
+
+        <com.github.barteksc.pdfviewer.PDFView
+            android:id="@+id/pdfView"
+            android:layout_below="@id/persen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
 
     </RelativeLayout>
 

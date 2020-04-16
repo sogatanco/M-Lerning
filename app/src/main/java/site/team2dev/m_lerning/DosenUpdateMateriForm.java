@@ -17,8 +17,11 @@ import com.github.barteksc.pdfviewer.PDFView;
 import com.github.barteksc.pdfviewer.util.FitPolicy;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -34,54 +37,27 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 
-public class DosenAddMateriForm extends AppCompatActivity {
-
-    private static final int PICK_PDF_CODE =2342;
-    StorageReference mStorageReference;
-    EditText filename, nama;
-    ProgressBar progressBar;
-    TextView persent;
-    PDFView pdfView;
-    ImageView upload;
+public class DosenUpdateMateriForm extends AppCompatActivity {
+    private static final int PICK_PDF_CODE=2342;
+    AppCompatTextView title, save;
     AppCompatImageView back;
-    AppCompatTextView save;
+    PDFView pdfView;
+    TextView persent;
+    ProgressBar progressBar;
+    DatabaseReference databaseReference;
+    StorageReference mStorageReference;
+    ImageView upload;
+    EditText filename, nama;
     Boolean flags;
 
-    DatabaseReference databaseReference;
-
-    @SuppressLint("StaticFieldLeak")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dosen_add_materi_form);
+
+        title=findViewById(R.id.title);
+        title.setText("Update Materi");
         flags=false;
-
-        mStorageReference = FirebaseStorage.getInstance().getReference();
-        databaseReference= FirebaseDatabase.getInstance().getReference("jurusan").child("tik").child("prodi")
-                .child(getIntent().getStringExtra("id_prodi")).child("kelas").child(getIntent().getStringExtra("id_kelas"))
-                .child("mk").child(getIntent().getStringExtra("id_mk")).child("materi");
-
-        filename=findViewById(R.id.filename);
-        filename.setKeyListener(null);
-
-        nama=findViewById(R.id.nama);
-
-        progressBar=findViewById(R.id.progressBar);
-
-        persent=findViewById(R.id.persen);
-
-        pdfView=findViewById(R.id.pdfView);
-
-        upload=findViewById(R.id.uploadicon);
-        upload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setType("application/pdf");
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(intent, "Select PDF"), PICK_PDF_CODE);
-            }
-        });
 
         back=findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
@@ -92,28 +68,90 @@ public class DosenAddMateriForm extends AppCompatActivity {
             }
         });
 
+        pdfView=findViewById(R.id.pdfView);
+        persent=findViewById(R.id.persen);
+        progressBar=findViewById(R.id.progressBar);
+
+        mStorageReference = FirebaseStorage.getInstance().getReference();
+        databaseReference= FirebaseDatabase.getInstance().getReference("jurusan").child("tik").child("prodi")
+                .child(getIntent().getStringExtra("id_prodi")).child("kelas").child(getIntent().getStringExtra("id_kelas"))
+                .child("mk").child(getIntent().getStringExtra("id_mk")).child("materi").child(getIntent().getStringExtra("id"));
+
+        upload=findViewById(R.id.uploadicon);
+        upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent();
+                intent.setType("application/pdf");
+                intent.setAction(intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Select Pdf"), PICK_PDF_CODE);
+            }
+        });
+
+        filename=findViewById(R.id.filename);
+        filename.setKeyListener(null);
+
+        nama=findViewById(R.id.nama);
+
         save=findViewById(R.id.save);
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                flags=true;
                 String vnama=nama.getText().toString().trim();
                 String vfile=filename.getText().toString().trim();
 
                 if(!TextUtils.isEmpty(vnama)&& !TextUtils.isEmpty(vfile)){
-                    String id=databaseReference.push().getKey();
-                    MateriItem materiItem=new MateriItem(id, vnama, vfile);
-                    databaseReference.child(id).setValue(materiItem);
+                    databaseReference.child("itemName").setValue(vnama);
+                    databaseReference.child("itemFile").setValue(vfile);
 
-                    Toast.makeText(DosenAddMateriForm.this, "Materi telah ditambahkan", Toast.LENGTH_LONG).show();
+                    Toast.makeText(DosenUpdateMateriForm.this, "Materi berhasil di update", Toast.LENGTH_LONG).show();
+                    flags=true;
                     finish();
-                }
-                else{
-                    Toast.makeText(DosenAddMateriForm.this, "Field tidak boleh kosong", Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(DosenUpdateMateriForm.this, "Field tidak boleh kosong", Toast.LENGTH_LONG).show();
                 }
             }
         });
 
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                nama.setText(dataSnapshot.getValue(MateriItem.class).getItemName());
+                filename.setText(dataSnapshot.getValue(MateriItem.class).getItemFile());
+                String file=dataSnapshot.getValue(MateriItem.class).getItemFile();
+                if(flags==false){
+                    new AsyncTask<Void, Void, Void>() {
+                        @SuppressLint("WrongThread")
+                        @Override
+                        protected Void doInBackground(Void... voids) {
+                            try {
+                                InputStream input = new URL(file).openStream();
+                                pdfView.fromStream(input)
+                                        .enableSwipe(true)
+                                        .swipeHorizontal(false)
+                                        .enableDoubletap(true)
+                                        .defaultPage(0)
+                                        .spacing(0)
+                                        .autoSpacing(false)
+                                        .pageFitPolicy(FitPolicy.WIDTH)
+                                        .fitEachPage(false)
+                                        .scrollHandle(null)
+                                        .enableAntialiasing(true)
+                                        .load();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            return null;
+                        }
+                    }.execute();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
     }
 
@@ -121,11 +159,11 @@ public class DosenAddMateriForm extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == PICK_PDF_CODE && resultCode == RESULT_OK && data != null && data.getData() != null) {
-            if (data.getData() != null) {
+        if(requestCode==PICK_PDF_CODE && resultCode==RESULT_OK && data != null ){
+            if(data.getData() !=null){
                 uploadFile(data.getData());
             }else{
-                Toast.makeText(this, "No file chosen", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DosenUpdateMateriForm.this, "No file choosen", Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -175,7 +213,6 @@ public class DosenAddMateriForm extends AppCompatActivity {
                                     }.execute();
                                 }
 
-
                             }
                         });
                     }
@@ -200,4 +237,3 @@ public class DosenAddMateriForm extends AppCompatActivity {
 
     }
 }
-

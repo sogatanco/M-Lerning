@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -94,6 +95,18 @@ public class DosenAddMateri extends AppCompatActivity {
         });
     }
 
-    private void deleteItem(String s) {
+    private void deleteItem(String id) {
+        String[] data=id.split(" ");
+        if(data[1].equals("delete")){
+            databaseReference.child(data[0]).removeValue();
+            Toast.makeText(DosenAddMateri.this, "item was deleted", Toast.LENGTH_SHORT).show();
+        }else if(data[1].equals("detail")){
+            Intent i=new Intent(DosenAddMateri.this, DosenUpdateMateriForm.class);
+            i.putExtra("id", data[0]);
+            i.putExtra("id_prodi", getIntent().getStringExtra("id_prodi"));
+            i.putExtra("id_kelas", getIntent().getStringExtra("id_kelas"));
+            i.putExtra("id_mk", getIntent().getStringExtra("id_mk"));
+            startActivity(i);
+        }
     }
 }
