@@ -8,4 +8,5 @@
     <color name="hitam">#333333</color>
     <color name="hint">#CDCDCD</color>
     <color name="putih">#ffffff</color>
+    <color name="danger">#FF6262</color>
 </resources>

@@ -9,8 +9,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DosenUpdateMateriForm"
+        <activity android:name=".DosenAddTestSoalForm"
             android:theme="@style/AppTheme.Utama"></activity>
+        <activity
+            android:name=".DosenAddTestSoal"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".DosenAddTestForm"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".DosenAddTest"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".DosenUpdateTask"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".DosenAddTaskForm"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".DosenAddTask"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".DosenUpdateMateriForm"
+            android:theme="@style/AppTheme.Utama" />
         <activity
             android:name=".DosenAddMateriForm"
             android:theme="@style/AppTheme.Utama" />

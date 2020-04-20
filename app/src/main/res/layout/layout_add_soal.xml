@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="@color/cardview_light_background">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1pt"
+            android:src="@drawable/deleteicon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5pt"
+            android:id="@+id/soal"
+            android:textSize="14sp"
+            android:text="Mengapa kamu mencintai ku sayang"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/text"
+            android:layout_toRightOf="@id/icon"/>
+
+<!--        pilihan 1-->
+
+        <ImageView
+            android:id="@+id/icon1"
+            android:layout_toRightOf="@id/icon"
+            android:layout_marginLeft="10pt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_filter_1"
+            android:layout_below="@id/soal"
+            android:layout_marginTop="2pt"/>
+
+        <TextView
+            android:id="@+id/pilihan1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/icon1"
+            android:layout_below="@id/soal"
+            android:text="karena sayang"
+            android:layout_marginLeft="3pt"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"/>
+
+<!--pilihan 2-->
+        <ImageView
+            android:id="@+id/icon2"
+            android:layout_toRightOf="@id/icon"
+            android:layout_marginLeft="10pt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_filter_2"
+            android:layout_below="@id/pilihan1"
+            android:layout_marginTop="2pt"/>
+
+        <TextView
+            android:id="@+id/pilihan2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/icon1"
+            android:layout_below="@id/pilihan1"
+            android:text="karena sayang"
+            android:layout_marginLeft="3pt"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"/>
+
+        <!--pilihan 3-->
+        <ImageView
+            android:id="@+id/icon3"
+            android:layout_toRightOf="@id/icon"
+            android:layout_marginLeft="10pt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_filter_3"
+            android:layout_below="@id/pilihan2"
+            android:layout_marginTop="2pt"/>
+
+        <TextView
+            android:id="@+id/pilihan3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/icon1"
+            android:layout_below="@id/pilihan2"
+            android:text="karena sayang"
+            android:layout_marginLeft="3pt"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"/>
+
+        <!--pilihan 4-->
+        <ImageView
+            android:id="@+id/icon4"
+            android:layout_toRightOf="@id/icon"
+            android:layout_marginLeft="10pt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_filter_4"
+            android:layout_below="@id/pilihan3"
+            android:layout_marginTop="2pt"/>
+
+        <TextView
+            android:id="@+id/pilihan4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/icon1"
+            android:layout_below="@id/pilihan3"
+            android:text="karena sayang"
+            android:layout_marginLeft="3pt"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"/>
+
+        <!--pilihan benar-->
+        <ImageView
+            android:id="@+id/iconbenar"
+            android:layout_toRightOf="@id/icon"
+            android:layout_marginLeft="10pt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_pilihan_benar"
+            android:layout_below="@id/pilihan4"
+            android:layout_marginTop="2pt"/>
+
+        <TextView
+            android:id="@+id/pilihanbenar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/icon1"
+            android:layout_below="@id/pilihan4"
+            android:textColor="@color/hijau"
+            android:text="karena sayang"
+            android:layout_marginLeft="3pt"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"/>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

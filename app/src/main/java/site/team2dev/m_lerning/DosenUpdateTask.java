@@ -1,6 +1,7 @@
 package site.team2dev.m_lerning;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,17 +16,19 @@ import com.google.firebase.database.ValueEventListener;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatTextView;
 
-public class DosenAddInfo extends AppCompatActivity {
+public class DosenUpdateTask extends AppCompatActivity {
     AppCompatImageView back;
-    EditText field;
+    AppCompatTextView title;
+    Button submmiter, save;
+    EditText name, deadline, detail;
     DatabaseReference databaseReference;
-    Button save;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dosen_add_info);
+        setContentView(R.layout.activity_dosen_add_task_form);
 
         back=findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
@@ -35,18 +38,30 @@ public class DosenAddInfo extends AppCompatActivity {
             }
         });
 
+        title=findViewById(R.id.title);
+        title.setText("Update Task");
+
         databaseReference= FirebaseDatabase.getInstance().getReference("jurusan").child("tik").child("prodi")
                 .child(getIntent().getStringExtra("id_prodi")).child("kelas").child(getIntent().getStringExtra("id_kelas"))
-                .child("mk").child(getIntent().getStringExtra("id_mk"));
-        field=findViewById(R.id.field);
+                .child("mk").child(getIntent().getStringExtra("id_mk")).child("task").child(getIntent().getStringExtra("id_task"));
+        name=findViewById(R.id.name);
+        deadline=findViewById(R.id.deadline);
+        detail=findViewById(R.id.detail);
 
         save=findViewById(R.id.save);
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                databaseReference.child("itemInfo").setValue(field.getText().toString().trim());
-                Toast.makeText(DosenAddInfo.this, "Info updated", Toast.LENGTH_LONG).show();
-                finish();
+                String vname=name.getText().toString().trim(), vdeadline=deadline.getText().toString().trim(),
+                            vdetail=detail.getText().toString().trim();
+                if(!TextUtils.isEmpty(vname)&&!TextUtils.isEmpty(vdeadline)&&!TextUtils.isEmpty(vdetail)){
+                    databaseReference.child("itemName").setValue(name.getText().toString().trim());
+                    databaseReference.child("itemDetail").setValue(detail.getText().toString().trim());
+                    databaseReference.child("itemDeadline").setValue(deadline.getText().toString().trim());
+                    Toast.makeText(DosenUpdateTask.this, "Tugas berhasil di update", Toast.LENGTH_LONG).show();
+                }else {
+                    Toast.makeText(DosenUpdateTask.this, "Tidak boleh ada field yang kosong", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
@@ -58,11 +73,9 @@ public class DosenAddInfo extends AppCompatActivity {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.hasChild("itemInfo")){
-                    field.setText(dataSnapshot.child("itemInfo").getValue().toString());
-                }else{
-                    field.setText("");
-                }
+                name.setText(dataSnapshot.getValue(TaskItem.class).getItemName());
+                deadline.setText(dataSnapshot.getValue(TaskItem.class).getItemDeadline());
+                detail.setText(dataSnapshot.getValue(TaskItem.class).getItemDetail());
             }
 
             @Override

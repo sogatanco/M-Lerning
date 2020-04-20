@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DosenAddTaskForm">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_light"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:elevation="10dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/backbutton">
+        </androidx.appcompat.widget.AppCompatImageView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/text"
+            android:textSize="20sp">
+        </androidx.appcompat.widget.AppCompatTextView>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/name"
+            android:layout_marginRight="15pt"
+            android:layout_marginLeft="15pt"
+            android:layout_marginTop="15pt"
+            android:hint="Task Name"
+            android:fontFamily="@font/poppins_regular"
+            android:singleLine="true"
+            android:textSize="14sp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/deadline"
+            android:layout_below="@id/name"
+            android:layout_marginRight="15pt"
+            android:layout_marginLeft="15pt"
+            android:layout_marginTop="7pt"
+            android:hint="Deadline (DD-MM-YYYY)"
+            android:fontFamily="@font/poppins_regular"
+            android:singleLine="true"
+            android:textSize="14sp"/>
+
+        <EditText
+            android:id="@+id/detail"
+            android:layout_below="@id/deadline"
+            android:layout_width="match_parent"
+            android:padding="5pt"
+            android:layout_marginRight="15pt"
+            android:layout_marginTop="7pt"
+            android:layout_marginLeft="15pt"
+            android:layout_height="70pt"
+            android:ems="10"
+            android:textColor="@color/text"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:hint="Type detail here ...."
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:background="@drawable/text_area_rounded" />
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15pt"
+            android:layout_marginBottom="20pt"
+            android:background="@color/hijau"
+            android:textColor="@color/putih"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="14sp"/>
+
+        <Button
+            android:id="@+id/submitter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 Submitter"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15pt"
+            android:layout_marginBottom="20pt"
+            android:background="@null"
+            android:textColor="@color/hijau"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="14sp"/>
+    </RelativeLayout>
+
+</RelativeLayout>

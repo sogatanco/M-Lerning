@@ -48,7 +48,7 @@
                 android:layout_marginTop="10pt"
                 android:layout_toRightOf="@id/hei"
                 android:fontFamily="@font/poppins_bold"
-                android:text="Arhami Str.Kom"
+                android:text="Mr/Mrs"
                 android:textColor="@color/hijau"
                 android:textSize="14sp" />
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/putih">
+    tools:context=".DosenAddTestSoal">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -26,7 +26,7 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Info"
+            android:text="Questions"
             android:fontFamily="@font/poppins_bold"
             android:textColor="@color/text"
             android:textSize="20sp">
@@ -36,40 +36,31 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_below="@id/toolbar">
 
-        <EditText
-            android:id="@+id/field"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycle"
+            android:background="@color/cardview_light_background"
             android:layout_width="match_parent"
-            android:padding="5pt"
-            android:layout_marginRight="20pt"
-            android:layout_marginTop="20pt"
-            android:layout_marginLeft="20pt"
-            android:layout_marginBottom="5pt"
-            android:layout_height="70pt"
-            android:ems="10"
-            android:textColor="@color/text"
-            android:fontFamily="@font/poppins_regular"
-            android:textSize="14sp"
-            android:hint="add new info"
-            android:gravity="start|top"
-            android:inputType="textMultiLine"
-            android:background="@drawable/text_area_rounded" />
+            android:padding="14pt"
+            android:scrollbars="vertical"
+            android:elevation="0dp"
+            android:layout_height="match_parent" />
 
         <Button
-            android:id="@+id/save"
+            android:id="@+id/add"
             android:layout_width="wrap_content"
             android:layout_height="20pt"
-            android:layout_marginRight="20pt"
-            android:text="update"
-            android:fontFamily="@font/poppins_bold"
+            android:text="tambah"
+            android:layout_marginLeft="3pt"
+            android:layout_marginBottom="20pt"
+            android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:textColor="@color/putih"
+            android:layout_marginRight="15pt"
+            android:fontFamily="@font/poppins_bold"
             android:background="@color/hijau"
-            android:layout_below="@id/field"/>
+            android:textColor="@color/putih"/>
     </RelativeLayout>
-
-
 
 </RelativeLayout>

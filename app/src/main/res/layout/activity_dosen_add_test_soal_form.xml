@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DosenAddTestSoalForm">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_light"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:elevation="10dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/backbutton">
+        </androidx.appcompat.widget.AppCompatImageView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Question"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/text"
+            android:textSize="20sp">
+        </androidx.appcompat.widget.AppCompatTextView>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_marginLeft="15pt"
+        android:layout_marginRight="15pt">
+
+        <EditText
+            android:id="@+id/soal"
+            android:layout_width="match_parent"
+            android:padding="5pt"
+            android:layout_marginTop="7pt"
+            android:layout_height="50pt"
+            android:ems="10"
+            android:textColor="@color/text"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:hint="Question here"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:background="@drawable/text_area_rounded" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/soal"
+            android:id="@+id/icon1"
+            android:layout_alignBottom="@id/pilihan1"
+            android:src="@drawable/ic_filter_1"/>
+
+        <EditText
+            android:id="@+id/pilihan1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/soal"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:layout_marginTop="3pt"
+            android:layout_marginLeft="5pt"
+            android:layout_toRightOf="@id/icon1"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pilihan1"
+            android:id="@+id/icon2"
+            android:layout_alignBottom="@id/pilihan2"
+            android:src="@drawable/ic_filter_2"/>
+
+        <EditText
+            android:id="@+id/pilihan2"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pilihan1"
+            android:layout_marginTop="3pt"
+            android:layout_marginLeft="5pt"
+            android:layout_toRightOf="@id/icon1"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pilihan2"
+            android:id="@+id/icon3"
+            android:layout_alignBottom="@id/pilihan3"
+            android:src="@drawable/ic_filter_3"/>
+
+        <EditText
+            android:id="@+id/pilihan3"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pilihan2"
+            android:layout_marginTop="3pt"
+            android:layout_marginLeft="5pt"
+            android:layout_toRightOf="@id/icon1"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pilihan3"
+            android:id="@+id/icon4"
+            android:layout_alignBottom="@id/pilihan4"
+            android:src="@drawable/ic_filter_4"/>
+
+        <EditText
+            android:id="@+id/pilihan4"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pilihan3"
+            android:layout_marginTop="3pt"
+            android:layout_marginLeft="5pt"
+            android:layout_toRightOf="@id/icon1"/>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/benar"
+            android:layout_marginTop="3pt"
+            android:layout_below="@id/pilihan4"
+            android:fontFamily="@font/poppins_regular" />
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="20pt"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text="save"
+            android:background="@color/hijau"
+            android:textColor="@color/putih"
+            android:fontFamily="@font/poppins_bold"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>

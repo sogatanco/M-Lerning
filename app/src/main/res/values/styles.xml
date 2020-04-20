@@ -6,7 +6,7 @@
         <item name="android:screenOrientation">portrait</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">#ffffff</item>
-        <item name="colorAccent">@color/text</item>
+        <item name="colorAccent">#C5C5C5</item>
     </style>
 
     <style name="AppTheme.NoStatusAndAction">

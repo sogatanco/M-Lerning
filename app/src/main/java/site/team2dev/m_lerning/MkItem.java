@@ -4,6 +4,7 @@ public class MkItem {
     private String itemId;
     private String itemName;
     private String itemDosen;
+    private String itemInfo;
 
 
     public MkItem(){
@@ -26,4 +27,5 @@ public class MkItem {
     public String getItemDosen(){
         return itemDosen;
     }
+
 }
