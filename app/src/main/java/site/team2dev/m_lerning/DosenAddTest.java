@@ -130,6 +130,17 @@ public class DosenAddTest extends AppCompatActivity {
                         dialog.cancel();
                         Toast.makeText(DosenAddTest.this, "Deleted succesfully!", Toast.LENGTH_LONG).show();
                     }
+                })
+                .setNeutralButton("Submitters", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent i=new Intent(DosenAddTest.this, DosenSubmitterTest.class);
+                        i.putExtra("id_prodi", getIntent().getStringExtra("id_prodi"));
+                        i.putExtra("id_kelas", getIntent().getStringExtra("id_kelas"));
+                        i.putExtra("id_mk", getIntent().getStringExtra("id_mk"));
+                        i.putExtra("id_test", s);
+                        startActivity(i);
+                    }
                 });
 
         // membuat alert dialog dari builder

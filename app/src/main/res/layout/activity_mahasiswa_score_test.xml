@@ -15,6 +15,7 @@
         android:elevation="10dp">
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/backbutton">
@@ -79,7 +80,7 @@
             android:fontFamily="@font/poppins_regular"
             android:textSize="14sp"
             android:layout_below="@id/totalscore"
-            android:text="Total jumlah 30 soal"
+            android:text=""
             android:layout_centerHorizontal="true"/>
 
         <TextView
@@ -89,7 +90,7 @@
             android:fontFamily="@font/poppins_regular"
             android:textSize="14sp"
             android:layout_below="@id/soal"
-            android:text="Terjawab 20 soal"
+            android:text=""
             android:layout_centerHorizontal="true"/>
 
         <TextView
@@ -116,6 +117,7 @@
             android:layout_width="60pt"
             android:layout_height="15pt"
             android:text="ok"
+            android:id="@+id/ok"
             android:textColor="@color/putih"
             android:fontFamily="@font/poppins_bold"
             android:background="@drawable/btn_rounded"

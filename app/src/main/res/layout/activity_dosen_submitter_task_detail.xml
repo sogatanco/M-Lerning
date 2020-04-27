@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DosenSubmitterTaskDetail">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_light"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:elevation="10dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/backbutton">
+        </androidx.appcompat.widget.AppCompatImageView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Detail Task"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/text"
+            android:textSize="20sp">
+        </androidx.appcompat.widget.AppCompatTextView>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:background="@color/cardview_light_background">
+
+        <com.github.barteksc.pdfviewer.PDFView
+            android:id="@+id/pdfView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/submit"/>
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="20pt"
+            android:text="score"
+            android:layout_marginLeft="3pt"
+            android:layout_marginBottom="15pt"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15pt"
+            android:fontFamily="@font/poppins_bold"
+            android:background="@color/hijau"
+            android:textColor="@color/putih"/>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_toLeftOf="@id/submit"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20pt"
+            android:layout_marginLeft="15pt"
+            android:layout_marginRight="5pt"
+            android:background="?android:attr/listDivider" />
+
+        <EditText
+            android:id="@+id/nilai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/divider"
+            android:layout_marginLeft="15pt"
+            android:layout_marginBottom="2pt"
+            android:textColor="@color/text"
+            android:background="@null"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="Nilai"
+            android:layout_marginRight="5pt"
+            android:textColorHint="@color/hint"
+            android:layout_toLeftOf="@+id/submit"
+            android:textSize="14sp"
+            android:singleLine="true"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

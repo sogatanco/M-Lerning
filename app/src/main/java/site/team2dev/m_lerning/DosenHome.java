@@ -37,6 +37,7 @@ public class DosenHome extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 firebaseAuth.signOut();
+                startActivity(new Intent(DosenHome.this, LoginActivity.class));
             }
         });
 

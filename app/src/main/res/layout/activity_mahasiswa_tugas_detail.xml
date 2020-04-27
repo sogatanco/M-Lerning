@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MahasiswaTugasDetail">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_light"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:elevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/backbutton"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/text"
+                android:textSize="20sp"
+                android:layout_toRightOf="@id/back"
+                android:layout_centerVertical="true"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/deadline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="10sp"
+                android:layout_alignParentRight="true"
+                android:text="Deadline\n22-07-2019"
+                android:textColor="@color/text"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15pt"/>
+
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15pt"
+        android:layout_marginRight="15pt"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="14sp"
+        android:text="Buatlah sebuah makalah dan ini dan itu juga ya "
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="15pt"/>
+
+    <EditText
+        android:id="@+id/filename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/divider"
+        android:layout_marginLeft="15pt"
+        android:layout_marginBottom="2pt"
+        android:textColor="@color/text"
+        android:background="@null"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="Item Baru"
+        android:layout_marginRight="5pt"
+        android:textColorHint="@color/hint"
+        android:layout_toLeftOf="@+id/upload"
+        android:textSize="14sp"
+        android:singleLine="true"/>
+
+
+    <Button
+        android:id="@+id/upload"
+        android:layout_width="wrap_content"
+        android:layout_height="20pt"
+        android:text="Upload"
+        android:layout_marginLeft="3pt"
+        android:layout_marginBottom="20pt"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15pt"
+        android:fontFamily="@font/poppins_bold"
+        android:background="@color/hijau"
+        android:textColor="@color/putih"/>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_toLeftOf="@id/upload"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20pt"
+        android:layout_marginLeft="15pt"
+        android:layout_marginRight="5pt"
+        android:background="?android:attr/listDivider" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="7pt"
+        android:layout_marginRight="15pt"
+        android:layout_marginLeft="15pt"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/upload"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>

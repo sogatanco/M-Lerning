@@ -4,13 +4,46 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo_poli"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo_poli"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DosenAddTestSoalForm"
+        <activity android:name=".MahasiswaNilaiDetail"
             android:theme="@style/AppTheme.Utama"></activity>
+        <activity
+            android:name=".MahasiswaNilai"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".DosenSubmitterTest"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".MahasiswaListTest"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".MahasiswaTest"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".DosenSubmitterTaskDetail"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".DosenSubmitterTask"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".MahasiswaTugasDetail"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".MahasiswaTugas"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".MahasiswaMateriDetail"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".MahasiswaMateri"
+            android:theme="@style/AppTheme.Utama" />
+        <activity
+            android:name=".DosenAddTestSoalForm"
+            android:theme="@style/AppTheme.Utama" />
         <activity
             android:name=".DosenAddTestSoal"
             android:theme="@style/AppTheme.Utama" />

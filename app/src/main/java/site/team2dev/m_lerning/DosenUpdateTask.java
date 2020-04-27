@@ -1,5 +1,6 @@
 package site.team2dev.m_lerning;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -64,6 +65,19 @@ public class DosenUpdateTask extends AppCompatActivity {
                 }
             }
         });
+
+        submmiter=findViewById(R.id.submitter);
+        submmiter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(DosenUpdateTask.this, DosenSubmitterTask.class);
+                i.putExtra("id_prodi", getIntent().getStringExtra("id_prodi"));
+                i.putExtra("id_kelas", getIntent().getStringExtra("id_kelas"));
+                i.putExtra("id_mk", getIntent().getStringExtra("id_mk"));
+                i.putExtra("id_task", getIntent().getStringExtra("id_task"));
+                startActivity(i);
+            }
+        });
     }
 
     @Override
@@ -76,6 +90,9 @@ public class DosenUpdateTask extends AppCompatActivity {
                 name.setText(dataSnapshot.getValue(TaskItem.class).getItemName());
                 deadline.setText(dataSnapshot.getValue(TaskItem.class).getItemDeadline());
                 detail.setText(dataSnapshot.getValue(TaskItem.class).getItemDetail());
+                if(dataSnapshot.hasChild("submitter")){
+                    submmiter.setText( String.valueOf(dataSnapshot.child("submitter").getChildrenCount())+" Submitter");
+                }
             }
 
             @Override

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MahasiswaTest">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_light"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:elevation="10dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/backbutton">
+        </androidx.appcompat.widget.AppCompatImageView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Questions"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/text"
+            android:textSize="20sp">
+        </androidx.appcompat.widget.AppCompatTextView>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="15pt"
+        android:layout_below="@id/toolbar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/timer"
+            android:textColor="@color/danger"
+            android:text="00 : 00"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_marginBottom="15pt"/>
+
+        <TextView
+            android:fontFamily="@font/poppins_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/jumlah"
+            android:text="Soal 1 dari 10"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="15pt"/>
+
+        <TextView
+            android:layout_below="@id/jumlah"
+            android:id="@+id/soal"
+            android:layout_width="match_parent"
+            android:layout_height="70pt"
+            android:background="@drawable/text_area_rounded"
+            android:padding="10pt"
+            android:gravity="center"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:text="Nama harimau yang paling romantis adalah"/>
+
+        <TextView
+            android:id="@+id/pilihan1"
+            android:layout_marginTop="15pt"
+            android:layout_width="70pt"
+            android:layout_height="30pt"
+            android:background="@drawable/text_area_rounded"
+            android:padding="5pt"
+            android:gravity="center"
+            android:layout_below="@id/soal"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:text="Nama harimau yang paling romantis adalah"/>
+
+        <TextView
+            android:id="@+id/pilihan3"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15pt"
+            android:layout_width="70pt"
+            android:layout_height="30pt"
+            android:background="@drawable/text_area_rounded"
+            android:padding="5pt"
+            android:gravity="center"
+            android:layout_below="@id/soal"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:text="Nama harimau yang paling romantis adalah"/>
+
+        <TextView
+            android:layout_marginTop="10pt"
+            android:id="@+id/pilihan2"
+            android:layout_width="70pt"
+            android:layout_height="30pt"
+            android:background="@drawable/text_area_rounded"
+            android:padding="5pt"
+            android:gravity="center"
+            android:layout_below="@id/pilihan1"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:text="Nama harimau yang paling romantis adalah"/>
+
+        <TextView
+            android:layout_marginTop="10pt"
+            android:id="@+id/pilihan4"
+            android:layout_alignParentRight="true"
+            android:layout_width="70pt"
+            android:layout_height="30pt"
+            android:background="@drawable/text_area_rounded"
+            android:padding="5pt"
+            android:gravity="center"
+            android:layout_below="@id/pilihan1"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
+            android:text="Nama harimau yang paling romantis adalah"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
